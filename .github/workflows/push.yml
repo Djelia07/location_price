@@ -7,8 +7,11 @@ on:
 
 jobs:
  build-and-push:
+
    runs-on: ubuntu-latest
+
    steps:
+
      - name: Checkout repository
        uses: actions/checkout@v4
 
@@ -21,9 +24,9 @@ jobs:
      - name: Build image
        run: |
          docker build \
-         -t ${{ secrets.DOCKERHUB_USERNAME }}/location_price:latest .
+         -t ${{ secrets.DOCKERHUB_USERNAME }}/isi_housing:latest .
 
      - name: Push image
        run: |
          docker push \
-         ${{ secrets.DOCKERHUB_USERNAME }}/location_price:latest
+         ${{ secrets.DOCKERHUB_USERNAME }}/isi_housing:latest
